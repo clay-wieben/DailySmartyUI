@@ -6,7 +6,7 @@ export default class RecentPosts extends Component {
       <div className="recent-posts">
         <div className="recent-posts-wrapper">
           <div className="recent-posts-heading">Recent posts</div>
-          <ul classname="recent-posts-posts">
+          <ul className="recent-posts-posts">
             <li>recent post 0</li>
             <li>recent post 1</li>
             <li>recent post 2</li>

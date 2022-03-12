@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import SearchBar from "./searchbar";
 
 import * as actions from "../actions";
 

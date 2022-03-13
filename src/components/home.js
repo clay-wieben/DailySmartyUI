@@ -6,11 +6,16 @@ import RecentPosts from "./recentPosts";
 import { connect } from "react-redux";
 
 class Home extends Component {
+  handleSearchBarSubmit(query) {
+    console.log("trying to handle for query", query);
+    this.props.history.push("/results");
+  }
+
   render() {
     return (
       <div className="home">
         <Logo />
-        <SearchBar />
+        <SearchBar onSubmit={(query) => this.handleSearchBarSubmit(query)} />
         <RecentPosts />
       </div>
     );

@@ -4,22 +4,44 @@ class Post extends Component {
   renderTopics() {
     let topics = this.props.associated_topics.map((topic, index) => {
       return (
-        <span className="post-topic" key={index}>
-          {topic}
-        </span>
+        // prettier-ignore
+        <span className="post-topic" key={index}>{topic}</span>
       );
     });
     return topics;
   }
 
-  render() {
-    return (
-      <li className="recent-post">
-        <div className="recent-post_title">{this.props.title}</div>
+  renderLinks() {
+    let links = this.props.post_links.map((post_link, index) => {
+      return (
+        <div className="post-link" key={index}>
+          <div className="post-link_box"></div>
+          <div classname="post-link_link">
+            <a href={post_link.link_url}>Useful Link#{index + 1}</a>
+          </div>
+        </div>
+      );
+    });
+    return links;
+  }
 
-        <div className="recent-post_topics">{this.renderTopics()}</div>
-      </li>
-    );
+  render() {
+    if (this.props.type == "recent") {
+      return (
+        <li className="recent-post">
+          <div className="recent-post_title">{this.props.title}</div>
+          <div className="recent-post_topics">{this.renderTopics()}</div>
+        </li>
+      );
+    } else if (this.props.type == "result") {
+      return (
+        <li className="result-post">
+          <div className="result-post_topics">{this.renderTopics()}</div>
+          <div classnName="result-post_title">{this.props.title}</div>
+          <div className="result-post_links">{this.renderLinks()}</div>
+        </li>
+      );
+    }
   }
 }
 

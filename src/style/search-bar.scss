@@ -1,4 +1,6 @@
 .search-bar {
+  display: grid;
+
   .search-bar_wrapper {
     display: grid;
     grid-row-gap: 23px;
@@ -10,9 +12,6 @@
       box-shadow: 2px 3px 20px 1px rgba(0, 0, 0, 0.1);
       border: none;
       border-radius: 5px;
-
-      height: 105px;
-      font-size: 35px;
 
       transition: all 0.2s ease-in-out;
 
@@ -34,5 +33,25 @@
       font-size: 14px;
       color: $color-gray-two;
     }
+  }
+}
+
+.search-bar_home {
+  align-content: center;
+  justify-items: center;
+
+  input {
+    height: 105px;
+    font-size: 40px;
+  }
+}
+
+.search-bar_results {
+  align-content: start;
+  justify-items: center;
+
+  input {
+    font-size: 22px;
+    height: 50px;
   }
 }

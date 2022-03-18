@@ -11,13 +11,16 @@
       border: none;
       border-radius: 5px;
 
-      height: 118px;
-      font-size: 40px;
+      height: 105px;
+      font-size: 35px;
 
       transition: all 0.2s ease-in-out;
 
       &::placeholder {
         color: $color-gray-two;
+        font-family: "Font Awesome\ 5 Free", "Lato", Arial, Helvetica,
+          sans-serif;
+        font-weight: 600;
       }
 
       &:focus {

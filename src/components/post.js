@@ -25,7 +25,7 @@ class Post extends Component {
       return (
         <div className="post-link" key={index}>
           <div className="post-link_box"></div>
-          <div classname="post-link_link">
+          <div className="post-link_link">
             <a href={post_link.link_url}>Useful Link#{index + 1}</a>
           </div>
         </div>
@@ -42,25 +42,24 @@ class Post extends Component {
           <div className="recent-post_topics">{this.renderTopics()}</div>
         </li>
       );
-    } else if (this.props.type == "result") {
-      return (
-        <li className="result-post">
-          <div className="result-post_topics">{this.renderTopics()}</div>
-          <div className="result-post_title">
-            <a
-              href={this.props.url_for_post}
-              onMouseEnter={() => this.setState({ height: 70 })}
-              onMouseLeave={() => this.setState({ height: 0 })}
-            >
-              {this.props.title}
-            </a>
-          </div>
-          <AnimateHeight duration={500} height={this.state.height}>
-            <div className="result-post_links">{this.renderLinks()}</div>
-          </AnimateHeight>
-        </li>
-      );
-    }
+    } else this.props.type == "result";
+    return (
+      <li className="result-post">
+        <div className="result-post_topics">{this.renderTopics()}</div>
+        <div className="result-post_title">
+          <a
+            href={this.props.url_for_post}
+            onMouseEnter={() => this.setState({ height: 70 })}
+            onMouseLeave={() => this.setState({ height: 0 })}
+          >
+            {this.props.title}
+          </a>
+        </div>
+        <AnimateHeight duration={500} height={this.state.height}>
+          <div className="result-post_links">{this.renderLinks()}</div>
+        </AnimateHeight>
+      </li>
+    );
   }
 }
 
